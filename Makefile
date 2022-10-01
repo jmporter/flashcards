@@ -21,7 +21,7 @@ push:
 
 run:
 	ssh $(DEVICE_HOST) 'killall -q -9 flashcards || true; systemctl stop xochitl || true'
-	ssh $(DEVICE_HOST) 'RUST_BACKTRACE=1 RUST_LOG=debug ./flashcards'
+	ssh $(DEVICE_HOST) 'RUST_BACKTRACE=full RUST_LOG=debug ./flashcards'
 
 start-xochitl:
 	ssh $(DEVICE_HOST) 'killall -q -9 flashcards || true; systemctl start xochitl'
